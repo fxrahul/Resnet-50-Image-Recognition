@@ -64,7 +64,7 @@ model.add(layers.UpSampling2D((2, 2)) )
 
 model.add(layers.Conv2D(1, (3, 3), activation='sigmoid', padding='same') )
 
-model.compile(optimizer='adadelta', loss='categorical_crossentropy')
+model.compile(optimizer='adadelta', loss='binary_crossentropy')
 
 """**Feature extraction model**"""
 
