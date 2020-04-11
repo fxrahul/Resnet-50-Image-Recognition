@@ -64,7 +64,7 @@ model.add(layers.UpSampling2D((2, 2)) )
 
 model.add(layers.Conv2D(1, (3, 3), activation='sigmoid', padding='same') )
 
-model.compile(optimizer='adadelta', loss='binary_crossentropy')
+model.compile(optimizer='adadelta', loss='categorical_crossentropy')
 
 """**Feature extraction model**"""
 
@@ -95,7 +95,7 @@ model.add(layers.Dropout(0.5))
 model.add(layers.BatchNormalization())
 model.add(layers.Dense(10, activation='softmax'))
 
-model.compile(optimizer=optimizers.RMSprop(lr=2e-5), loss='binary_crossentropy', metrics=['acc'])
+model.compile(optimizer=optimizers.RMSprop(lr=2e-5), loss='categorical_crossentropy', metrics=['acc'])
 
 """**Preparing model with the help of resnet 50 pretrained model with imagenet**"""
 
